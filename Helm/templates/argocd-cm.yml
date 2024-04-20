@@ -3,6 +3,7 @@ data:
   accounts.alice: apiKey,login
   accounts.alice.enabled: "false"
 kind: ConfigMap
+metadata:
   labels:
     app.kubernetes.io/instance: hailyeah2ebugaloo
     app.kubernetes.io/name: argocd-cm
