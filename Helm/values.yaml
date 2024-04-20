@@ -3,5 +3,5 @@ weatherAppImage:
   tag: latest
   pullPolicy: Always
 bgColorConfigMap: configmap-green
-REPLICAS: 2
+REPLICAS: 1
 
