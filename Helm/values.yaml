@@ -2,6 +2,6 @@ weatherAppImage:
   repository: gilibee/hailyeah
   tag: latest
   pullPolicy: Always
-bgColorConfigMap: configmap-green
-REPLICAS: 1
+bgColorConfigMap: configmap-blue
+REPLICAS: 2
 
