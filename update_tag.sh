@@ -13,12 +13,13 @@ NEW_TAG=$1
 FILE="Helm/values.yaml"
 
 # Check if the file exists
-#if [ ! -f "$FILE" ]; then
-#    echo "Error: File does not exist."
-#    exit 1
-#fi
+if [ ! -f "$FILE" ]; then
+    echo "Error: File does not exist."
+    exit 1
+fi
 
 # Update the tag in the file
-sed -i '' "s/tag: .*/tag: $NEW_TAG/" $FILE
+sed -E -i "s/^ *tag:.*$/  tag: $NEW_TAG/" $FILE
+
 
 echo "Tag updated to '$NEW_TAG' in $FILE."
