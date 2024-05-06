@@ -2,23 +2,25 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hailyeah
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  namespace: default
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    name: ''
-    namespace: default
-    server: 'https://kubernetes.default.svc'
   source:
     path: Helm
     repoURL: 'https://github.com/Gilibee-goode/Hailyeah-ArgoCD.git'
     targetRevision: main
-    directory:
-      recurse: false
+    # directory:
+    #   recurse: false
+  destination:
+    # name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
   sources: []
   project: default
   syncPolicy:
+    # syncOptions:
+    # - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
-
